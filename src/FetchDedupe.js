@@ -11,6 +11,7 @@ export class FetchDedupe {
     this.activeRequests = {};
     this.activeRequests.isRequestInFlight = this.isRequestInFlight;
     this.activeRequests.clear = this.clear;
+    this.generateResponse = generateResponse;
   }
 
   clear() {

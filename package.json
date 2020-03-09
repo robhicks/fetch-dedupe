@@ -6,11 +6,13 @@
   "main": "lib/FetchDedupe.cjs",
   "module": "src/FetchDedupe.js",
   "scripts": {
-    "clean": "rimraf dist es tmp lib",
-    "test": "NODE_ENV=test jest",
-    "test:watch": "jest --watch",
+    "build": "rollup -c",
+    "clean": "rimraf dist tmp lib",
+    "postinstall": "run-s clean build",
     "prepublish": "in-publish && npm run build || not-in-publish",
-    "build": "rollup -c"
+    "start": "rollup -cw",
+    "test:watch": "jest --watch",
+    "test": "NODE_ENV=test jest"
   },
   "repository": {
     "type": "git",
@@ -59,6 +61,6 @@
     "rollup-plugin-babel": "^4.2.0",
     "rollup-plugin-commonjs": "^9.2.0",
     "rollup-plugin-node-resolve": "^4.0.0",
-    "rollup-plugin-uglify": "^6.0.3"
+    "rollup-plugin-terser": "^5.2.0"
   }
 }
