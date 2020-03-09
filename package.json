@@ -7,7 +7,7 @@
   "module": "src/FetchDedupe.js",
   "scripts": {
     "build": "rollup -c",
-    "clean": "rimraf dist tmp lib",
+    "clean": "npx rimraf dist tmp lib",
     "postinstall": "run-s clean build",
     "prepublish": "in-publish && npm run build || not-in-publish",
     "start": "rollup -cw",
